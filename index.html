@@ -122,8 +122,21 @@
             <div class="mt-5 mx-auto">
               <i class="fa fa-4x fa-question text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">Why?</h3>
+
               <p class="text-muted mb-0 text-left">
-                Ghani and his team created the algorithm for predicting the end price while he was employed at the IT consultancy company Accenture. The goal was to remove the uncertainty for a seller by foreseeing the outcome of an auction. The real life problem here is that an auction by itself brings uncertainties to both the buyer and the seller of the auctioned item. If you can create a model that can deal with or take away these uncertainties, both parties could be better off.
+                <strong>The Power of Trade</strong><br>
+                  The video below explains how Kyle MacDonald used his trading skills to swap a simple invaluable object into a substantial asset. It illustrates how objects don’t have a fix value but that an objects value can vary over situations and time. A smart trader is therefore able to make profit due to these sales margins.
+              </p>
+
+              <br>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/givuAYzTUYk" allowfullscreen></iframe>
+              </div>
+              <br>
+
+              <p class="text-muted mb-0 text-left">
+                <strong>The Scientific Approach</strong><br>
+                The above clip shows Kyle MacDonald's achievement and tells of how it’s possible to make money by trading. This might also have motivated scientists to unravel the secrets of a good trade. Ghani and his team created the algorithm for predicting the end-price while he was employed at the IT consultancy company Accenture. The goal was to remove the uncertainty for a seller by foreseeing the outcome of an auction. The real life problem here is that an auction by itself brings uncertainties to both the buyer and the seller of the auctioned item. If you can create a model that can deal with or take away these uncertainties, both parties could be better off.
               </p>
             </div>
           </div>
@@ -306,8 +319,54 @@
         <div class="row">
 
           <p><strong>Concurrent online auction data and their visualization</strong></p>
-          <p>
+          <p class="text-left">
+            Previous studies showed how different machine learning algorithms predict independent online auctions. However, online auctions have typical characteristics which influence the overall selling process, including the final selling price. For one, online auctions have no geographical barriers, which increases the both the supply, as well as the demand for a specific product. Moreover, online auctions have varying time period, where one auctions lasts only a couple of hours, where another lasts for several days. Due to these properties, online auctions can occur simultaneously, and buyers are given the possibility to bid on similar or competing items. As a result, these different items will influence each other’s final selling price. This concurrent structure of online auctions make it an interesting topic to study.<br><br>
+            Hyde, Jank, and Shmueli (2006) study how concurrency influences a product’s final price but also focus on visualization methods that better display the simultaneous ongoing auctions.<br><br>
+            Hyde et al. used data from 236 closed auctions for a PDA. This data consisted of bidding history and auction features (e.g. duration, item category). Final prices can be influenced negatively or positively by: whether or not the box was already opened, a questionable seller reputation, a special accessory added to the sale or free shipping. <br>
+            According to Shmueli, Russo, and Jank (2004), a typical pattern of bidding activity in online auctions start off with some bidding activity at the beginning, followed by a period of little activity, and concluding with a growth of bids at the end. But using this pattern to predict future auctions is not adequate enough. Hyde et al. (2006) propose several methods to analyze and visualize price dynamics.<br>
           </p>
+          <i>Rug plots</i>
+          <p>
+            The first goal for Hyde et al. (2006) was to visualize the price evolution of a set of auctions. This should allow them to inspect for similarities and patterns in these auctions price evolutions. They propose a graphical method that displays an auctions price-evolution against time. Figure 1 illustrates this in a so-called rug plot of 236 different auctions. The black dots represent the end-price of a single auction. Additionally, Hyde et al. also look at a price-velocity curve, which is the first derivative of the price-evolution curve to illustrate the change difference over time (Figure 2).
+          </p>
+
+          <figure class="text-center figure">
+            <img src="img/figures/hyde_a.png" class="figure-img img-fluid rounded">
+            <figcaption class="">Figure 1</figcaption>
+          </figure>
+          <figure class="text-center figure">
+            <img src="img/figures/hyde_b.png" class="figure-img img-fluid rounded">
+            <figcaption class="">Figure 2</figcaption>
+          </figure>
+
+          <p>
+            As these type of plots maintain temporal information of several auctions, it’s suitable for analyzing the concurrency of auctions. Doing so offers certain types of patterns which represent the temporal concurrency.<br><br>
+            One of the typical patterns that can be deduced from the graphs is the behavior of sniping. This behavior leads to a high bidding frequencies at the end of the auction and to high peaks in the at the end of the price-velocity curve.<br><br>
+            Hyde et al. describe three main shapes of price curves: j-shaped (sniping), s-shaped and a straight line. A j-shaped curve starts when opening bids are low ($0.01). Straight lines occur when opening bids are already quite high, which result in little bidding. The s-shaped curve occurs when bidders increase strongly halfway through the auction. By color coding the curves, it’s possible to investigated different types of groupings, like number of bidders and auction duration for example. When doing this for auction duration, it’s appears that some auction durations have tendency to group together (3 or 5-day auctions). <br>
+          </p>
+
+          <i>Time Grouped Box Plots</i>
+          <p>
+            Besides looking at price-evolution curves, Shmueli and Jank (2005) proposed using boxplots to incorporate the volume of auctions for a specific series of time windows. Analysis in this manner shows that the median of weekly closing prices over time. Whereas closing prices on daily basis might vary a lot. When analyzing auction volumes on a daily scale, it becomes clear that most auctions take place during only one half of the day.
+          </p>
+
+          <i>Moving Statistics Plots</i>
+          <p>
+            A third useful method in visualizing auction data is by plotting the combined average or median over time. The statistic is computed over a cohort of closing bids. Figure 3 shows these plots for cohorts of three, five and ten closing bids. This so called moving statistics plot is useful for understanding time-trends and offers a smoother transition over time.<br><br>
+            As concurrency seems to influence online auctions, the above mentioned methods to visualize the data prove to be valuable tools to understand a seller’s market better.
+          </p>
+
+          <figure class="text-center figure">
+            <img src="img/figures/hyde_c.png" class="figure-img img-fluid rounded">
+            <figcaption class="">Figure 3</figcaption>
+          </figure>
+
+
+
+
+
+
+
 
 
 
@@ -406,7 +465,9 @@
             <h2 class="section-heading">Critique</h2>
             <hr class="my-4">
             <p class="text-left">
-              The different algorithms mentioned in the paper of Ghani & Simmons (2005) but not mentioned in the Financial Times article (Thomas, 2006) for predicting end prices of PDA’s have an accuracy up to 96%. Already in the Financial Times article, some critique is given by Forrester Research analyst Hellen Omwando (Thomas, 2006), doubting the possibilty to correctly predict prices of goods like antiques and services. However, Ghani already confirmed in his paper that the current predicting model needs an extension to be applicable for “soft” goods like antiques and fashion items (Ghani & Simmons, 2005). Moreover, Accenture confirms the model’s poor applicability for goods with little historic auction data in the Financial Times article.
+              The different algorithms mentioned in the paper of Ghani & Simmons (2005) but not mentioned in the Financial Times article (Thomas, 2006) for predicting end prices of PDA’s have an accuracy up to 96%. Already in the Financial Times article, some critique is given by Forrester Research analyst Hellen Omwando (Thomas, 2006), doubting the possibility to correctly predict prices of goods like antiques and services. However, Ghani already confirmed in his paper that the current predicting model needs an extension to be applicable for “soft” goods like antiques and fashion items (Ghani & Simmons, 2005). Moreover, Accenture confirms the model’s poor applicability for goods with little historic auction data in the Financial Times article.<br><br>
+              Apart from the fact that the algorithm is not applicable to all type of goods. Other reasons might also have blocked the introduction of sales-insurance. As the algorithm combines a lot of information about human decision making as a group, it doesn’t consider the decision maker of a seller. As these algorithms attempt to guarantee the final end-price of an auction, it can’t guarantee the price that a sellers wants to receive for the sale. For online auctions, end-prices usually end up lower than a user’s desired price. Because of this, the algorithm isn’t used to offer insurance, it’s more a reality check that offers forehanded disappointment about the end-price. Consequently, this could be a reason why it’s not being implemented: sellers don’t agree with so they won’t use the insurance, or even worse, scare them away from eBay.<br><br>
+              As well as offering insurance, the proposed algorithm can also offer sellers insight in how to improve the features of their advertisements. By tweaking the features, auction sites can offer users a way to increase their end-price value. However, when algorithms start offering sellers insight in how to best sell their product, this will affect the market. For example, if a seller plans to sell their ice skates in June, and eBay suggests to wait until December to sell, this probably result in everybody selling their ice skates during the winter period. As a result, this will influence the sellers market as there will be a peak in supply. In such case, the end-price is not predictable anymore by an algorithm, as the end-price is also influenced by the algorithms prediction.
             </p>
           </div>
         </div>
@@ -445,10 +506,10 @@
             <hr class="my-4">
             <p class="mb-5">Bajari, P., & Hortascu, A. (2003). The winner's curse, reserve prices and endogenous entry: Empirical insights from eBay auctions. <i> RAND Journal of Economics</i>, 329-355.</p>
             <p class="mb-5">Ghani, R. (2010). <i>U.S. Patent No. 7,752,120.</i> Washington, DC: U.S. Patent and Trademark Office.
-            <p class="mb-5">* Ghani, R., & Simmons, H. (2004). Predicting the end-price of online auctions. In <i>Proceedings of the International Workshop on Data Mining and Adaptive Modelling Methods for Economics and Management (pp. 1-11).</i></p>
+            <p class="mb-5">Ghani, R., & Simmons, H. (2004). Predicting the end-price of online auctions. In <i>Proceedings of the International Workshop on Data Mining and Adaptive Modelling Methods for Economics and Management (pp. 1-11).</i></p>
             <p class="mb-5">Goldman, S.A. (1997). <i>Computational Learning Theory.</i> Unpublished manuscript, Washington University, St. Louis Missouri</p>
             <p class="mb-5">Hyde, V., Jank, W., & Shmueli, G. (2006). Investigating concurrency in online auctions through visualization. <i> The American Statistician, 60</i>(3), 241-250.</p>
-            <p class="mb-5">* Kaur, P., Goyal, M., & Lu, J. (2012). A proficient and dynamic bidding agent for online auctions. In <i>International Workshop on Agents and Data Mining Interaction (pp. 170-190). Springer, Berlin, Heidelberg.</i></p>
+            <p class="mb-5">Kaur, P., Goyal, M., & Lu, J. (2012). A proficient and dynamic bidding agent for online auctions. In <i>International Workshop on Agents and Data Mining Interaction (pp. 170-190). Springer, Berlin, Heidelberg.</i></p>
             <p class="mb-5">Kaur, P., Goyal, M., & Lu, J. (2017). A comparison of bidding strategies for online auctions using fuzzy reasoning and negotiation decision functions. <i>IEEE Transactions on Fuzzy Systems, 25</i>(2), 425-438.</p>
             <p class="mb-5">Kerstenbaum, R. (2017, April 26). What Are Online Marketplaces and What is Their Future? <i>Forbes</i>. Retrieve from https://www.forbes.com/sites/richardkestenbaum/2017/04/26/what-are-online-marketplaces-and-what-is-their-future/</p>
             <p class="mb-5">Lucking-Reiley, D., Bryan, D., Prasad, N., & Reeves, D. (2007). Pennies from eBay: The determinants of price in online auctions. <i>The journal of industrial economics, 55</i>(2), 223-233.</p>
