@@ -1,0 +1,30 @@
+
+
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-image: url("../img/header_crunch.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header.masthead p {
+  color: white;
+}
+
+@media (min-width: 992px) {
+
+  #mainNav .navbar-nav>li.nav-item>a.nav-link {
+    color: white;
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+  #mainNav .navbar-brand {
+    color: white;
+}
+}
